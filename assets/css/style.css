@@ -33,7 +33,6 @@ body
 }
 .menu .menu-nav>li>a{
   color: #fff;
-  font-family: "Times New Roman", Times, serif;
 }
 .menu .menu-nav>li>a:focus, .menu .menu-nav>li>a:hover {
     color: #000;
