@@ -6,7 +6,7 @@
     font-family: myCinzel;
     src: url(Cinzel.ttf);
 }
-
+@import url('https://fonts.googleapis.com/css?family=News+Cycle');
 body
 {
   background: url(../../assets/img/bg.jpg) 50% 0 no-repeat #d4ecf9;
@@ -197,9 +197,9 @@ ul.list li {
     font-family: myCinzel;
 }
 .extra_wrapper p{
-  color: #717171;
-  font-family: myFont;
-  font-size: 15px;
+  color: #545454;
+  font-family: 'News Cycle', sans-serif;
+  font-size: 14px;
 }
 
 
