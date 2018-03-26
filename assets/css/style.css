@@ -1,7 +1,151 @@
-body{
-	background: url(../../assets/img/bg.jpg) no-repeat center center fixed; 
-     -webkit-background-size: cover;
-      -moz-background-size: cover;
-       -o-background-size: cover;
-          background-size: cover;
+@font-face {
+    font-family: myFont;
+    src: url(roboto.ttf);
+}
+@font-face {
+    font-family: myCinzel;
+    src: url(Cinzel.ttf);
+}
+
+body
+{
+  background: url(../../assets/img/bg.jpg) 50% 0 no-repeat #d4ecf9;
+  font-family: myFont;
+  color: #fff;
+}
+.main{
+  /*width: 1094px;
+    margin: 43px auto 0;*/
+  background: url(../../assets/img/main_bg.png) 0 0 repeat;
+  position:  relative;
+  top: 30px;
+}
+
+/* 
+/////////////////////////////////////////////////
+                HEADER 
+///////////////////////////////////////////////*/
+
+.menu{
+  padding-top: 65px;
+  background:  none;
+  border: none;
+}
+.menu .menu-nav>li>a{
+  color: #fff;
+  font-family: "Times New Roman", Times, serif;
+}
+.menu .menu-nav>li>a:focus, .menu .menu-nav>li>a:hover {
+    color: #000;
+    background-color: white;
+}
+.slider-content{
+  padding: 9px 40px;
+  position:  relative;
+  top: 37px;
+}
+
+.sb-slider{
+  background: #fff;
+    padding: 14px;
+}
+.carousel-control.left, .carousel-control.right{background: none;}
+.img-title{
+  margin: 0 auto;
+}
+
+
+/* 
+/////////////////////////////////////////////////
+                CENTER CONTENT 
+///////////////////////////////////////////////*/
+
+.main2{
+    background: url(../../assets/img/center.png) 0 0 repeat;
+    line-height: 22px;
+    height: 334px;
+}
+.center-main{
+    position: relative;
+    top: 100px;
+}
+
+.sign{
+    width: 45px;
+    display: inline-block;
+    background: #0a0000;
+    height: 45px;
+    border-radius: 50%;
+}
+
+.sign .fas{
+    text-align: center;
+    display: block;
+    padding: 13px;
+    font-size: 19px;
+    color: #d3e3b2;
+}
+.description{
+     margin-left: 79px;
+     color: #000;
+     background: #dce8c2;
+     padding: 7px;
+     border: 2px solid #4c8500;
+}
+.description h4{
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.description p{
+  font-family: myFont;
+  font-size: 14px;
+}
+/* 
+/////////////////////////////////////////////////
+                MAIN#
+///////////////////////////////////////////////*/
+.main3{
+  background: url(../../assets/img/main3.png) 0 0 repeat;
+  position: relative;
+  height: 100px;
+}
+.corousel-content{
+      position: relative;
+    top: 44px;
+}
+.carousel-indicators{
+  display: none;
+}
+.item h4{
+  font-family: myCinzel;
+  font-size:  27px;
+  font-weight:  normal;
+  margin-bottom: 13px;
+}
+
+.item p{
+  color: #a5a0a0;
+  font-family: "Times New Roman", Times, serif;
+}
+
+
+
+
+
+
+
+
+
+
+ @media (min-width: 768px) {
+  .navbar .navbar-nav {
+      display: inline-block;
+      float: none;
   }
+  .navbar .navbar-collapse {
+      text-align: center;
+  }
+} 
