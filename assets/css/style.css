@@ -104,12 +104,13 @@ body
 }
 /* 
 /////////////////////////////////////////////////
-                MAIN#
+                MAIN3
 ///////////////////////////////////////////////*/
 .main3{
   background: url(../../assets/img/main3.png) 0 0 repeat;
   position: relative;
-  height: 100px;
+  padding:  18px 0px;
+  padding-bottom: 96px;
 }
 .corousel-content{
       position: relative;
@@ -129,6 +130,47 @@ body
   color: #a5a0a0;
   font-family: "Times New Roman", Times, serif;
 }
+
+/* 
+/////////////////////////////////////////////////
+                MAIN4 
+///////////////////////////////////////////////*/
+
+.main4{
+  background: url(../../assets/img/main_bg.png) 0 0 repeat;
+  position: relative;
+  height: auto;
+  border-top: 1px solid #444;
+}
+
+.process{
+  padding: 17px;
+}
+.process h3{
+  margin-bottom: 18px;
+  font-family: myCinzel;
+  font-size: 35px;
+  text-transform: uppercase;
+}
+.process h3 span {
+    font-size: 25px;
+    color: #6a6a6a;
+    display: block;
+    padding-top: 3px;
+}
+.main4-content{
+  padding-top: 40px;
+}
+ul.list li {
+    padding-left: 13px;
+    font-size: 11px;
+    line-height: 26px;
+    text-transform: uppercase;
+    background: url(../../assets/img/marker1.png) 0 10px no-repeat;
+    color: #b3b3b3;
+}
+
+
 
 
 
