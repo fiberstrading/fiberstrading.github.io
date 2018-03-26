@@ -143,7 +143,7 @@ body
   border-top: 1px solid #444;
 }
 
-.process{
+.process, .article{
   padding: 17px;
 }
 .process h3{
@@ -171,11 +171,36 @@ ul.list li {
 }
 
 
-
-
-
-
-
+.article h3{
+  margin-bottom: 18px;
+  font-family: myCinzel;
+  font-size: 35px;
+  text-transform: uppercase;
+}
+.article h3 span {
+    font-size: 25px;
+    color: #6a6a6a;
+    display: block;
+    padding-top: 3px;
+}
+.img-inner{
+    border: 7px solid #333333;
+    margin-top: 3px;
+    display: inline-block;
+}
+.fleft {
+    float: left;
+    margin-right: 20px;
+}
+.extra_wrapper h5 {
+    color: #969696;
+    font-family: myCinzel;
+}
+.extra_wrapper p{
+  color: #717171;
+  font-family: myFont;
+  font-size: 15px;
+}
 
 
 
