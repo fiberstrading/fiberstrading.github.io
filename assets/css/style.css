@@ -638,7 +638,7 @@ margin-bottom:0;
     display: block;
     margin:  0 auto;
 }
-.managing{margin-top: 70px;}
+.managing{margin-top: 25px; margin-bottom: 42px;}
 .managing .thumbnail{
   background: transparent;
   border: transparent;
@@ -651,7 +651,14 @@ margin-bottom:0;
     font-family: 'News Cycle', sans-serif;
     font-size: 13px;
     text-align: center;
-
+}
+.managing h2{
+    text-align: center;
+    color: #000000;
+    font-weight: bold;
+    font-size: 26px;
+    margin: 0 auto;
+    font-family: myCinzel;
 }
 
 
