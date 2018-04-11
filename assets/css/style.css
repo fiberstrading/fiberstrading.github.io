@@ -688,13 +688,8 @@ margin-bottom:0;
     font-family: myCinzel;
 }
 
-.navbar-brand .logo-img {
-  height: 156px;
-  position: relative;
-  bottom: 6px;
-  top: -150px;
-  left: -25px;
-  text-align: center;
+ .logo-img {
+  width: 100px;
 }
 
 .progress-word {color: #5d5858;}
