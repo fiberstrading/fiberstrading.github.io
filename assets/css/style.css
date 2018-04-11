@@ -84,9 +84,10 @@ body
 .img-title{
   margin: 0 auto;
 }
+.logo{padding: 6px 3px;}
 .top{
   position: relative;
-  top: 119px;
+  top: 107px;
 }
 
 /*
