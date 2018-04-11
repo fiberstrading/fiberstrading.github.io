@@ -24,35 +24,46 @@ body
 }
 
 
-/* 
+/*
 /////////////////////////////////////////////////
-                HEADER 
+                HEADER
 ///////////////////////////////////////////////*/
 .main{
-  background: url(../../assets/img/main_bg.png) 0 0 repeat;
-  position:  relative;
-  top: 30px;
+  /* background: url(../../assets/img/main_bg.png) 0 0 repeat; */
+  /* position:  relative; */
+  /* top: 48px; */
+  background-color: rgba(22, 30, 24, 0.5);
 }
 .mains{
    background: url(../../assets/img/main_bg.png) 0 0 repeat;
    height: auto;
    padding: 14px 63px;
 }
-.menu{
-  padding-top: 65px;
-  background:  none;
-  border: none;
+ .menu{
+   background-color: #1e4002;
+   border-color: #59920b;
+   margin-bottom: 0px;
+   border-radius: 0;
 }
 .nav-menu{
   border-radius: 0px;
   border-color: transparent;
   margin-bottom: 0;
+  background-color: #1e4002;
+  border-color: #59920b;
+  margin-bottom: 0px;
+  border-radius: 0;
+}
+.menu-nav {
+  float: right;
 }
 .nav-menu .menu-nav>li>a{
+
   color: #fff;
 }
 .menu .menu-nav>li>a{
   color: #fff;
+  font-size: 14px;
 }
 .menu .menu-nav>li>a:focus, .menu .menu-nav>li>a:hover {
     color: #000;
@@ -74,12 +85,17 @@ body
 }
 .top{
   position: relative;
-  top: 39px;
+  top: 96px;
+}
+.header-top {
+    /* padding: 62px; */
+    /* background-color: white; */
+    padding-top: 96px;
 }
 
-/* 
+/*
 /////////////////////////////////////////////////
-                CENTER CONTENT 
+                CENTER CONTENT
 ///////////////////////////////////////////////*/
 
 .main2{
@@ -135,6 +151,7 @@ body
     font-family: myCinzel;
     font-size: 35px;
     text-transform: uppercase;
+    color: #1e4002;
     margin-bottom: 35px;
 }
 
@@ -153,7 +170,6 @@ body
 .extra_building h5{
   font-family: "Times New Roman", Times, serif;
   color: #000;
-  padding:  5px 0px;
 }
 .extra_building p{
   color: #000000;
@@ -167,17 +183,18 @@ body
 }
 .photos ul li {
     text-transform: uppercase;
-    
+
     padding: 15px 0 12px;
     border-top: 1px dotted #858935;
     background: url(../../assets/img/marker.png) right 14px no-repeat;
 }
 .photos ul li>a{
-  font-family: myRoman;
-  color: #3a3a3a;
+  font-size: 20px;
+  font-family: ROBOTO;
+  color: #1e4002;
 }
 
-/* 
+/*
 /////////////////////////////////////////////////
                 MAIN3
 ///////////////////////////////////////////////*/
@@ -211,9 +228,9 @@ body
 }
 
 
-/* 
+/*
 /////////////////////////////////////////////////
-                MAIN4 
+                MAIN4
 ///////////////////////////////////////////////*/
 
 .main4{
@@ -246,11 +263,11 @@ body
     padding-top: 3px;
 }
 .main4-content{
-  padding-top: 40px;
+  padding-top: 8px;
 }
 ul.list li {
     padding-left: 13px;
-    font-size: 11px;
+    font-size: 17px;
     line-height: 26px;
     text-transform: uppercase;
     background: url(../../assets/img/marker1.png) 0 10px no-repeat;
@@ -290,9 +307,9 @@ ul.list li {
 }
 
 
-/* 
+/*
 /////////////////////////////////////////////////
-                GALLERY 
+                GALLERY
 ///////////////////////////////////////////////*/
 .gallery{
     background: url(../../assets/img/main3.png) 0 0 repeat;
@@ -306,7 +323,7 @@ ul.list li {
     display: block;
     font-size: 22px;
     text-transform: uppercase;
-    font-weight: 600; 
+    font-weight: 600;
     font-weight: normal;
     vertical-align: middle;
     margin-bottom: 15px;
@@ -374,9 +391,9 @@ h2.lined-headings:before {
     background: #333333;
     padding: 6px 8px;
 }
-/* 
+/*
 /////////////////////////////////////////////////
-                FOOTER 
+                FOOTER
 ///////////////////////////////////////////////*/
 
 .footer{
@@ -470,7 +487,7 @@ h2.lined-headings:before {
     font-weight: normal ! important;
     text-align: left;
     margin-bottom: auto;
-   
+
 }
 .sc li:nth-child(2){
     font-size: 13px;
@@ -497,6 +514,7 @@ h2.lined-headings:before {
 }
 .copy{
   padding-bottom: 20px;
+  padding: 0 27px 18px;
 }
 
 .copy p{
@@ -507,7 +525,8 @@ h2.lined-headings:before {
 .caption h4{
     font-size: 18px;
     margin-bottom: 10px;
-    color: #fff;
+    color: #61bf02;
+    text-align: center;
 }
 .mains .thumbnail{
   background-color: #000000;
@@ -529,32 +548,32 @@ h2.lined-headings:before {
     text-align: center;
 }
 
-/* -------------------------------------- */    
+/* -------------------------------------- */
 /* underlined list stle                   */
 
-.underlined ol 
+.underlined ol
 {
 counter-reset:li; /* Initiate a counter */
 margin-left:0; /* Remove the default left margin */
 padding-left:0; /* Remove the default left padding */
 }
 
-.underlined ol > li 
+.underlined ol > li
 {position:relative; font-family: 'News Cycle', sans-serif;/* Create a positioning context */margin:0 0 6px 2em; /* Give each list item a left margin to make room for the numbers */padding:4px 8px; /* Add some spacing around the content */list-style:none; /* Disable the normal item numbering */border-top: 2px solid #000;/* background: #252525; */color: #000;}
 
-.underlined ol > li:before 
+.underlined ol > li:before
 {content:counter(li); /* Use the counter as content */counter-increment:li; /* Increment the counter by 1 */
 /* Position and style the number */position:absolute;top:-2px;left:-2em;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;width:2em;
 /* Some space between the number and the content in browsers that support
 generated content but not positioning it */margin-right:8px;padding:4px;border-top: 2px solid #000;color:#fff;background: #000;font-weight:bold;font-family:"Helvetica Neue", Arial, sans-serif;text-align:center;}
 
 .underlined li ol,
-.underlined li ul 
+.underlined li ul
 {
 margin-top:6px;
 }
 
-.underlined ol ol li:last-child 
+.underlined ol ol li:last-child
 {
 margin-bottom:0;
 }
@@ -661,8 +680,49 @@ margin-bottom:0;
     font-family: myCinzel;
 }
 
+.navbar-brand .logo-img {
+  height: 300px;
+  position: absolute;
+  bottom: 0;
+  top: -109px;
+  left: -69px;
+}
 
+.progress-word {color: white;}
 
+.progress-word li {
+    text-transform: uppercase;
+    font-size: 13px;
+    padding: 7px 0;
+    border-top: 1px dotted #858935;
+    text-align: center;
+    background: url(../../assets/img/marker.png) right 10px no-repeat;
+}
+.dropdown .flag{
+  width: 29px;
+}
+
+.flag-drop{
+  min-width: 0px;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+.flag-drop>li>a{
+  padding: 3px 16px;
+}
+.flag-drop>li>a:focus, .flag-drop>li>a:hover {
+    color: #262626;
+    text-decoration: none;
+    background-color: transparent;
+}
+.menu .menu-nav>.open>a, .menu .menu-nav>.open>a:focus, .menu .menu-nav>.open>a:hover {
+    color: #fff;
+    background-color: #c4ca3f;
+}
+.menu-nav>li>a{
+     padding: 14px 9px;
+}
 
 
 /*
@@ -729,19 +789,19 @@ ul.list li{background: none;}
 
 }
 
- @media (min-width: 768px) {
+/*  @media (min-width: 768px) {
   .navbar .navbar-nav {
       display: inline-block;
       float: none;
   }
   .navbar .navbar-collapse {
       text-align: center;
-  }
-
- 
-
+  } 
+*/
 
 
 
 
-} 
+
+
+}

@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>FTI</title>
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<!-- <link rel="stylesheet" href="assets/css/bootstrap.min-new.css"> -->
+	<link rel="stylesheet" href="assets/css/font-awesome.min.css">
+	<link rel="stylesheet" href="assets/css/lightslider.css">
+	<link rel="stylesheet" href="assets/css/reset.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+
+	<script type="text/javascript" src="assets/js/jquery.min.js"></script>
+	<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="assets/js/lightslider.js"></script>
+	<script type="text/javascript" src="assets/js/script.js"></script>
+</head>
+<style type="text/css">
+html, body, #map_canvas {
+    height: 500px;
+
+    margin: 0px;
+    padding: 0px
+    color:green;
+}
+h4 {color: green;}
+p {
+    color: green;
+    font-size: 17px;
+    font-weight: bold;
+}
+</style>
+<body>
+
+     <div class="container top">
+			 <nav class="navbar navbar-inverse menu">
+			 						<div class="container-fluid">
+			 							<div class="navbar-header">
+			 								<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+			 									<span class="icon-bar"></span>
+			 									<span class="icon-bar"></span>
+			 									<span class="icon-bar"></span>
+			 								</button>
+			 								<a class="navbar-brand" href="#"><img src="assets/img/logo.png" class="img-responsive logo-img"></a>
+			 							</div>
+			 							<div class="collapse navbar-collapse" id="myNavbar">
+			 								<ul class="nav navbar-nav menu-nav">
+			 									<li class=""><a href="index.html">Home</a></li>
+			 									<li><a href="who-we-are.html">Who we are</a></li>
+			 									<li><a href="where-we-are.html">Where we are</a></li>
+			 									<li><a href="our-plantation.html">Our plantations</a></li>
+			 									<li><a href="our-process.html">Our process</a></li>
+			 									<li><a href="our-application.html">Our applications</a></li>
+			 									<li><a href="our-people.html">Our people</a></li>
+			 									 <li><a href="#">Language</a></li>
+			 								</ul>
+
+			 							</div>
+			 						</div>
+			 					</nav>
+		<div class="mains">
+			<div class="row">
+				<h2 class="lined-headings"><a href="#"><span><i class="fa fa-star"></i> OUR LOCATION</span></a></h2>
+			</div>
+			<div class="row process">
+
+				<script type="text/javascript"
+				    src="http://maps.googleapis.com/maps/api/js?sensor=false">
+				</script>
+				<script type="text/javascript">
+				var locations = [
+				    ['Bicol Warehouse', 'Tabaco, Albay', 'Location 1 URL'],
+				    ['Baybay Leyte Warehouse', 'Baybay, Leyte', 'Location 2 URL'],
+				    ['Cagayan Warehouse', 'Cagayan de Oro', 'Location 3 URL'],
+				    ['Davao Warehouse', 'Davao City', 'Location 4 URL'],
+				];
+
+				var geocoder;
+				var map;
+				var bounds = new google.maps.LatLngBounds();
+
+				function initialize() {
+				    map = new google.maps.Map(
+				    document.getElementById("map_canvas"), {
+				        center: new google.maps.LatLng(126.600, 20.840),
+				        zoom: 15,
+				        mapTypeId: google.maps.MapTypeId.ROADMAP
+				    });
+				    geocoder = new google.maps.Geocoder();
+
+				    for (i = 0; i < locations.length; i++) {
+
+
+				        geocodeAddress(locations, i);
+				    }
+				}
+				google.maps.event.addDomListener(window, "load", initialize);
+
+				function geocodeAddress(locations, i) {
+				    var title = locations[i][0];
+				    var address = locations[i][1];
+				    var url = locations[i][2];
+				    geocoder.geocode({
+				        'address': locations[i][1]
+				    },
+
+				    function (results, status) {
+				        if (status == google.maps.GeocoderStatus.OK) {
+				            var marker = new google.maps.Marker({
+				                icon: 'icon.png',
+				                map: map,
+				                position: results[0].geometry.location,
+				                title: title,
+				                animation: google.maps.Animation.DROP,
+				                address: address,
+				                url: url
+				            })
+				            infoWindow(marker, map, title, address, url);
+				            bounds.extend(marker.getPosition());
+				            map.fitBounds(bounds);
+				        } else {
+				            alert("geocode of " + address + " failed:" + status);
+				        }
+				    });
+				}
+
+				function infoWindow(marker, map, title, address, url) {
+				    google.maps.event.addListener(marker, 'click', function () {
+				        var html = "<div><h4>" + title + "</h4><p>" + address + "<br></div></a></p></div>";
+				        iw = new google.maps.InfoWindow({
+				            content: html,
+				            maxWidth: 350
+				        });
+				        iw.open(map, marker);
+				    });
+				}
+
+				function createMarker(results) {
+				    var marker = new google.maps.Marker({
+				        icon: 'http://maps.google.com/mapfiles/ms/icons/blue.png',
+				        map: map,
+				        position: results[0].geometry.location,
+				        title: title,
+				        animation: google.maps.Animation.DROP,
+				        address: address,
+				        url: url
+				    })
+				    bounds.extend(marker.getPosition());
+				    map.fitBounds(bounds);
+				    infoWindow(marker, map, title, address, url);
+				    return marker;
+				}
+
+
+
+				</script>
+				</head>
+				<body onload="initialize()">
+				<div id="map_canvas" style="width:100%; height:450px; border: 2px solid #3872ac;"></div>
+			</div>
+			<div class="row">
+				<div class="col-xs-18 col-sm-6 col-md-3">
+		          <div class="thumbnail">
+		            <img src="assets/img/warehouse/1.png" alt="">
+		              <div class="caption">
+		                <h4>Tabaco, Albay</h4>
+		                <p style="text-align:center;">
+											<ul class="progress-word">
+												  <li>	3,000 MT annual production capacity</li>
+												  <li>	2,000 square meter property</li>
+												  <li>	Luzon fiber sources (Virac, Quezon, Bicol)</li>
+												  <li>	Export thru Manila International Port</li>
+											</ul>
+											</p>
+ 									</div>
+		          </div>
+		        </div>
+		        <div class="col-xs-18 col-sm-6 col-md-3">
+		          <div class="thumbnail">
+		            <img src="assets/img/warehouse/2.png" alt="">
+		              <div class="caption">
+		                <h4>Baybay Leyte</h4>
+										<p style="text-align:center;">
+										 <ul class="progress-word">
+												 <li>	 4,200 MT annual </li>
+												 <li>	3,000 square meter property</li>
+												 <li>	Visayas fiber sources (Samar, Leyte, Panay)</li>
+												 <li>Export thru Cebu International Port</li>
+										 </ul>
+										 </p>
+							  </div>
+		          </div>
+		        </div>
+                <div class="col-xs-18 col-sm-6 col-md-3">
+		          <div class="thumbnail">
+		            <img src="assets/img/warehouse/3.png" alt="">
+		              <div class="caption">
+		                <h4>Cagayan de Oro</h4>
+										<p style="text-align:center;">
+											<ul class="progress-word">
+													<li>		1,700 square meter property</li>
+													<li>Surigao, Agusan, Bukidnon, Lanao, Zamboanga sources</li>
+													<li>Export thru Cagayan de Oro International Port ( 7 km)</li>
+
+											</ul>
+											</p>
+
+
+		            </div>
+		          </div>
+		        </div>
+		        <div class="col-xs-18 col-sm-6 col-md-3">
+		          <div class="thumbnail">
+		            <img src="assets/img/warehouse/1.png" alt="">
+		              <div class="caption">
+		                <h4>Davao City</h4>
+		                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, soluta, eligendi doloribus sunt minus amet sit debitis repellat. Consectetur, culpa itaque odio similique suscipit</p>
+
+		            </div>
+		          </div>
+		        </div>
+
+			</div>
+		</div><!-- mains -->
+
+
+
+			<div class="footer">
+		<div class="footer-page">
+			<div class="col-sm-3">
+				<ul class="info">
+					<li>Information</li>
+					<li><a href="#">About Us</a></li>
+					<li><a href="#">Terms of Use</a></li>
+					<li><a href="#">Privacy Policy</a></li>
+					<li><a href="#">Opening Hours</a></li>
+					<li><a href="#">Advertise with Us</a></li>
+					<li><a href="#">Contact Us</a></li>
+				</ul>
+			</div>
+			<div class="col-sm-3">
+				<div class="social">
+					<ul class="sc">
+						<li style="">Social network</li>
+						<li><span>Find us on these social network sites</span></li>
+						    <li>
+						    	<div class="bg">
+						    		<a target="_blank" href="#"><i class="fa fa-facebook"></i></a>
+						    	</div>
+						    </li>
+						     <li>
+						    	<div class="bg">
+						    		<a target="_blank" href="#"><i class="fa fa-instagram"></i></a>
+						    	</div>
+						    </li>
+						     <li>
+						    	<div class="bg">
+						    		<a target="_blank" href="#"><i class="fa fa-twitter"></i></a>
+						    	</div>
+						    </li>
+						     <li>
+						    	<div class="bg">
+						    		<a target="_blank" href="#"><i class="fa fa-envelope"></i></a>
+						    	</div>
+						    </li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-sm-3">
+				<div class="location">
+					<ul class="info">
+						<li>Location</li>
+						<li><a href="#">Unit 2502,</a></li>
+						<li><a href="#">139 Corporate Center,</a></li>
+						<li><a href="#">Valero Street,</a></li>
+						<li><a href="#">Salcedo Village,</a></li>
+						<li><a href="#">Makati City 1227</a></li>
+				  </ul>
+				  <ul class="infos">
+						<li><a href="#">Unit 2502,</a></li>
+						<li><a href="#">139 Corporate Center,</a></li>
+						<li><a href="#">Valero Street,</a></li>
+						<li><a href="#">Salcedo Village,</a></li>
+						<li><a href="#">Makati City 1227</a></li>
+				  </ul>
+				</div>
+			</div>
+			<div class="col-sm-3">
+				<div class="widget">
+					<h2>Widget</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil ipsum nisi mollitia, velit veniam culpa laboriosam maxime fugit suscipit magni.</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-12">
+				<div class="copy">
+					<p>Copyright <i class="fa fa-copyright"></i> 2018 Fiberstrading.com Designed by DhyKhor.</p>
+				</div>
+			</div>
+			</div>
+
+		</div>
+	</div><!-- footer -->
+
+     </div><!-- container -->
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
